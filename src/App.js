@@ -1,12 +1,7 @@
-import './index.css';
-
+import Body from "./components/Body";
 
 function App() {
-  return (
-    <div className='font-bold'>
-      MovieFlix-GPT
-    </div>
-  );
+  return <Body />;
 }
 
 export default App;
