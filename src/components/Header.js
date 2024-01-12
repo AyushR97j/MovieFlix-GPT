@@ -7,6 +7,7 @@ import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
+import Search from "./Search";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -70,6 +71,7 @@ const Header = () => {
               ))}
             </select>
           )}
+          <Search />
           <button
             className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg"
             onClick={handleGptSearchClick}

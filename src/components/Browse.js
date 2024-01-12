@@ -12,14 +12,13 @@ import useGenresMovies from "../hooks/useGenresMovies";
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
-
+  
   useNowPlayingMovies();
   useTrendingMovies()
   usePopularMovies();
   useUpcomingMovies();
   useGenres();
   useGenresMovies();
- 
 
   return (
     <div>
