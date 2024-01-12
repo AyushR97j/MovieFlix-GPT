@@ -82,7 +82,7 @@ const Login = () => {
   };
   return (
     <div>
-      <Header />
+      <Header redirect="true" />
       <div className="absolute">
         <img className="h-screen w-screen object-cover" src={BG_URL} alt="logo" />
       </div>

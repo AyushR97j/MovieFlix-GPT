@@ -9,7 +9,7 @@ import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 import Search from "./Search";
 
-const Header = () => {
+const Header = ({redirect}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
@@ -34,7 +34,9 @@ const Header = () => {
             photoURL: photoURL,
           })
         );
+        if(redirect && user){
         navigate("/browse");
+        }
       } else {
         dispatch(removeUser());
         navigate("/");
@@ -47,6 +49,9 @@ const Header = () => {
 
   const handleGptSearchClick = () => {
     // Toggle GPT Search
+    if(!redirect){
+      navigate("/browse")
+    }
     dispatch(toggleGptSearchView());
   };
 
